@@ -15,6 +15,9 @@ function main() {
       const clear_shadow = /<g><rect fill="#C0C0C0"(.*?)\/><\/g>/gm;;
       result = result.replace(clear_shadow, "");
 
+      const clear_oval_shadow = /<g><path fill="#C0C0C0"(.*?)\/><\/g>/gm;;
+      result = result.replace(clear_oval_shadow, "");
+
       fs.writeFile(path_to_svg_clear,result,(err) => { 
           if (err) 
             console.log(err); 
